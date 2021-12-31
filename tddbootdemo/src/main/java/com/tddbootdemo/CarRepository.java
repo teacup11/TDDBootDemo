@@ -1,7 +1,11 @@
 package com.tddbootdemo;
 
-public class CarRepository {
-    public Car findByName(String name) {
-        return null;
-    }
+import org.springframework.data.repository.CrudRepository;
+
+import java.util.Optional;
+
+public interface CarRepository extends CrudRepository<Car, Long> {
+
+    Car findByName(String name);
+
 }

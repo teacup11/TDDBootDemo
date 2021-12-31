@@ -1,5 +1,8 @@
 package com.tddbootdemo;
 
+import org.springframework.stereotype.Service;
+
+@Service
 public class CarService {
 
     private CarRepository carRepository;
@@ -10,10 +13,6 @@ public class CarService {
     }
 
     public Car getCarDetails(String name) {
-        Car car =  carRepository.findByName(name);
-        if (car == null ) {
-            throw new CarNotFoundException();
-        }
-        return car;
+        return carRepository.findByName(name);
     }
 }
