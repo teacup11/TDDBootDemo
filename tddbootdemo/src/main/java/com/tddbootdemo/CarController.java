@@ -22,4 +22,10 @@ public class CarController {
         return carService.greet();
     }
 
+    @RequestMapping("/")
+    public @ResponseBody String greet() {
+        return "Hello, World";
+    }
+
+
 }
