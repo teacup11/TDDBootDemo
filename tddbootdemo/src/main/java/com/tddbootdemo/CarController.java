@@ -1,13 +1,11 @@
 package com.tddbootdemo;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class CarController {
 
-    private CarService carService;
+    private final CarService carService;
 
     //inject the dependency
     public CarController(CarService carService) {
@@ -15,8 +13,13 @@ public class CarController {
     }
 
     @GetMapping("/cars/{name}")
-    private Car getCar(@PathVariable String name) {
+    public Car getCar(@PathVariable String name) {
         return carService.getCarDetails(name);
+    }
+
+    @RequestMapping("/greeting")
+    public @ResponseBody String greeting() {
+        return carService.greet();
     }
 
 }

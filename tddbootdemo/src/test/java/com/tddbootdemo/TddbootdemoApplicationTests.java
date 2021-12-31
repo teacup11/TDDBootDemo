@@ -6,8 +6,9 @@ import org.springframework.boot.test.context.SpringBootTest;
 @SpringBootTest
 class TddbootdemoApplicationTests {
 
+	// simple sanity check test, that will fail if the application context cannot start
 	@Test
-	void contextLoads() {
+	public void contextLoads() {
 	}
 
 }

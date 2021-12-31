@@ -15,4 +15,8 @@ public class CarService {
     public Car getCarDetails(String name) {
         return carRepository.findByName(name);
     }
+
+    public String greet() {
+        return "Hello, World";
+    }
 }
